@@ -4,9 +4,16 @@
     "description": "4GL Programming Language, and 4gl Snippets",
     "version": "0.0.1",
     "publisher": "garysan",
+    "author": {
+        "name":"Ariel Gary Sandi Vigabriel",
+        "email":"gary.gsv@gmail.com",
+        "url": "http://garysandi.blogspot.com"
+
+    },
+    
     "repository":{
         "type":"git",
-        "url":""
+        "url":"https://github.com/garysan/4gl.git"
     },
     "keywords":[
         "4gl","4gl snippets","4GL Programming Language"
@@ -14,6 +21,18 @@
     "engines": {
         "vscode": "^1.18.0"
     },
+    "galleryBanner": {
+        "color": "#403757",
+        "theme": "dark"
+    },
+    "icon": "images/4gl.png",
+    "badges": [
+        {
+        "url":"https://github.com/garysan/4gl/issues",
+        "href":"https://img.shields.io/github/issues/garysan/4gl.svg",
+        "description": "Issues"
+        }
+    ],
     "categories": [
         "Languages",
         "Snippets"
