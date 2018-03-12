@@ -1,0 +1,46 @@
+{
+    "name": "4gl",
+    "displayName": "4gl",
+    "description": "4GL Programming Language, and 4gl Snippets",
+    "version": "0.0.1",
+    "publisher": "garysan",
+    "repository":{
+        "type":"git",
+        "url":""
+    },
+    "keywords":[
+        "4gl","4gl snippets","4GL Programming Language"
+    ],
+    "engines": {
+        "vscode": "^1.18.0"
+    },
+    "categories": [
+        "Languages",
+        "Snippets"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "4gl",
+            "aliases": ["4gl","4GL"],
+            "extensions": [".4gl",".per"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "4gl",
+            "scopeName": "source.4gl",
+            "path": "./syntaxes/4gl.tmLanguage.json"
+        }],
+        "snippets": [
+            {
+                "language": "4gl",
+                "path": "./snippets/snippets.json"
+            }
+        ],
+        "configurationDefaults": {
+            "[4gl]":{
+                "files.encoding": "cp437",
+                "files.insertFinalNewline": true
+            }
+        }
+    }
+}

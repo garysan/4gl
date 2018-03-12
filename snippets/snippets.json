@@ -1,0 +1,215 @@
+{
+    "encabezado": {
+        "prefix": "encabezado",
+        "body": [
+            "###############################################################################",
+            "# PROGRAMA: $TM_FILENAME",
+            "# CREADO  : $CURRENT_DATE/$CURRENT_MONTH/$CURRENT_YEAR, $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
+            "# VERSION : 1.0.0",
+            "# AUTOR   : ${1:autor}",
+            "# OBJETIVO: ${2:objetivo}",            
+            "# DEPENDENCIAS: ",
+            "#\t\t${3:dependencias}",
+            "###############################################################################"
+        ],
+        "description": "Encabezado para programas 4gl"
+    },
+    "seccion": {
+        "prefix": "seccion",
+        "body": [
+            "#######################################",
+            "# ${0:Descripción}",
+            "#######################################\n"
+        ],
+        "description": "Sección definida"
+    },
+    "select": {
+        "prefix": "select",
+        "body": [
+            "SELECT ${1:campos}",
+            "FROM   ${2:tablas}",
+            "WHERE  ${3:condicion}",
+            "AND    ${4:condicion}",
+            "ORDER BY ${5:nrocolumna}\n"
+        ],
+        "description": "Escribe un SELECT con la estructura clasica con un ORDER BY columna o columnas identifacadas por el nro de columna, Forma de uso: campos,tablas y condiciones "
+    },
+    "select into": {
+        "prefix": "select into",
+        "body": [
+            "SELECT ${1:campos}",
+            "INTO   ${2:contenedor}",
+            "FROM   ${3:tablas}",
+            "WHERE  ${4:condicion}",
+            "AND    ${5:condicion}",
+            "ORDER BY ${6:nrocolumna}",
+            "IF STATUS = NOTFOUND THEN",
+            "\t${7:#codigo}",
+            "END IF",
+            "\n"
+        ],
+        "description": "Retorna los valores de un SELECT a un contenedor definido o variables indicadas."
+    },
+    "insert": {
+        "prefix": "insert",
+        "body": [
+            "INSERT INTO ${1:tabla}",
+            "VALUES (${2:campos})",
+            "IF status < 0 THEN",
+            "\t${3:#codigo}",
+            "END IF",
+            "\n"
+        ],
+        "description": "Insertar en la base de datos"
+    },
+    "update": {
+        "prefix": "update",
+        "body": [
+            "UPDATE ${1:tabla}",
+            "SET    \t${2:variables}",
+            "WHERE  ${3:condicion}",
+            "IF status < 0 THEN",
+            "\t${3:#codigo}",
+            "END IF",
+            "\n"
+        ],
+        "description": "Actualizar en la base de datos"
+    },
+    "delete": {
+        "prefix": "delete",
+        "body": [
+            "DELETE FROM ${1:tabla}",
+            "WHERE ${2:condicion}",
+            "IF status < 0 THEN",
+            "\t${3:#codigo}",
+            "END IF",
+            "\n"
+        ],
+        "description": "Borrar de la Base de datos"
+    },
+    "if": {
+        "prefix": "if",
+        "body": [
+            "IF ${0:condicion} THEN",
+            "\t${1:#codigo}",
+            "END IF\n"
+        ],
+        "description": "Condicion IF"
+    },
+    "foreach": {
+        "prefix": "foreach",
+        "body": [
+            "FOREACH ${0:nombcursor} INTO ${2:record}",
+            "\t${1:#codigo}",
+            "END FOREACH"
+        ],
+        "description": "Foreach en cursor"
+    },
+    "case": {
+        "prefix": "case",
+        "body": [
+            "CASE ${0:variable} ",
+            "\tWHEN ${1:#valor}",
+            "\t\t${2:#codigo}",
+            "\tOTHERWISE",
+            "\t\t${3:#codigo}",
+            "END CASE",
+            "\n"
+        ],
+        "description": ""
+    },
+    "cursor": {
+        "prefix": "cursor",
+        "body": [
+            "DECLARE ${1:nombcursor} CURSOR FOR ",
+            "\n"
+        ],
+        "description": "Declaración de cursor generalmente va acompañado de un SELECT y un FOREACH"
+    },
+    "funcion": {
+        "prefix": "funcion",
+        "body": [
+            "FUNCTION ${1:nombrefuncion}(${2:parametros})",
+            "\tDEFINE \tl_resp\tCHAR(100),",
+            "\t\t\t${3:var}\t${4:tipo}",
+            "\t\t${5:#codigo}",
+            "\tRETURN l_resp",
+            "END FUNCTION\n"
+        ],
+        "description": "Declara funcion basica"
+    },
+    "record": {
+        "prefix": "record",
+        "body": [
+            "${1:var} RECORD LIKE ${2:tabla}.*,",
+            "\n"
+        ],
+        "description": "declarar record like tabla"
+    },
+    "recordvar": {
+        "prefix": "recordvar",
+        "body": [
+            "${1:var} RECORD ",
+            "\t${2:variable}\t${3:tipo},",
+            "\t${4:variable}\t${5:tipo}",
+            "END RECORD\n"
+        ],
+        "description": "Declarar record con estructura propia"
+    },
+    "error": {
+        "prefix": "error",
+        "body": [
+            "ERROR \"${1:mensaje}\"",
+            "SLEEP ${2:sleep}\n"
+        ],
+        "description": "Mostrar error con sleep"
+    },
+    "display": {
+        "prefix": "display",
+        "body": [
+            "DISPLAY \"${1:valor}\"",
+            "SLEEP ${2:sleep}\n"
+        ],
+        "description": "Mostrar diplay con sleep"
+    },
+    "displaybyname": {
+        "prefix": "displaybyname",
+        "body": [
+            "DISPLAY BY NAME ${1:valor}",
+            "\n"
+        ],
+        "description": "Display by name"
+    },
+    "message": {
+        "prefix": "message",
+        "body": [
+            "MESSAGE \"${1:mensaje}\""
+        ],
+        "description": "Mostrar un mensaje"
+    },
+    "prepared": {
+        "prefix": "prepared",
+        "body": [
+            "PREPARE ${1:prep} FROM ${2:consulta}",
+            "DECLARE ${3:curs} SCROLL CURSOR FOR ${1:prep}",
+            "OPEN    ${3:curs}",
+            "FETCH ${3:curs} INTO ${4:record}.*",
+            "IF status = NOTFOUND THEN",
+            "\t\tERROR \"REGISTRO NO ENCONTRADO\"",
+            "\tRETURN",
+            "END IF",
+            "\t\t${5:#codigo}",
+            "CLOSE ${3:curs}",
+            "FREE  ${3:curs}",
+            "\n"
+        ],
+        "description": "Define un prepared statment "
+    },
+    "": {
+        "prefix": "",
+        "body": [
+            ""
+        ],
+        "description": ""
+    }
+}

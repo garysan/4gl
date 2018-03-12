@@ -1,0 +1,481 @@
+{
+	"fileTypes": [
+		"4gl"
+	],
+	"foldingStartMarker": "(\\{\\s*(\/\/.*)?$|^\\s*\/\/ \\{\\{\\{)",
+	"foldingStopMarker": "^\\s*(\\}|\/\/ \\}\\}\\}$)",
+	"scopeName": "source.4gl",
+	"name": "4GL",
+	"patterns": [
+		{
+			"match": "\\b(?i)(abort|abs|absolute|accept|access|acos|ada|add|after|all|allocate|alter|and|ansi|any|append|arg_val|array|arr_count|arr_curr|as|asc|ascending|ascii|asin|at|atan|atan2|attach|attribute|attributes|audit|authorization|auto|autonext|average|avg|before|begin|between|black|blink|blue|bold|border|both|bottom|break|buffered|by|byte|call|cascade|case|char|character|character_length|char_length|check|class_origin|clear|clipped|close|cluster|cobol|color|column|columns|command|comment|comments|commit|committed|composites|compress|concurrent|connect|connection|connection_alias|constrained|constraint|constraints|construct|continue|control|cos|count|create|current|cursor|cyan|data|database|dataskip|date|datetime|day|dba|dbinfo|dbservername|deallocate|debug|dec|decimal|declare|default|defaults|defer|deferred|define|delete|delimiter|delimiters|desc|descending|describe|descriptor|detach|diagnostics|dim|dirty|disabled|disconnect|display|distinct|distributions|do|dormant|double|down|downshift|drop|each|elif|else|enabled|end|entry|error|errorlog|err_get|err_print|err_quit|esc|escape|every|exception|exclusive|exec|execute|exists|exit|exp|explain|expression|extend|extent|extern|external|f1|f10|f11|f12|f13|f14|f15|f16|f17|f18|f19|f2|f20|f21|f22|f23|f24|f25|f26|f27|f28|f29|f3|f30|f31|f32|f33|f34|f35|f36|f37|f38|f39|f4|f40|f41|f42|f43|f44|f45|f46|f47|f48|f49|f5|f50|f51|f52|f53|f54|f55|f56|f57|f58|f59|f6|f60|f61|f62|f63|f64|f7|f8|f9|false|fetch|fgl_getenv|fgl_keyval|fgl_lastkey|field|field_touched|file|fillfactor|filtering|finish|first|float|flush|for|foreach|foreign|form|format|formonly|fortran|found|fraction|fragment|free|from|function|get_fldbuf|global|globals|go|goto|grant|green|group|having|header|help|hex|hide|high|hold|hour|idata|if|ilength|immediate|in|include|index|indexes|indicator|infield|init|initialize|input|insert|instructions|int|integer|interrupt|interval|into|int_flag|invisible|is|isam|isolation|itype|key|label|language|last|leading|left|length|let|like|line|lineno|lines|load|locate|lock|log|log10|logn|long|low|magenta|main|margin|matches|max|mdy|medium|memory|menu|message|message_length|message_text|min|minute|mod|mode|modify|module|money|month|more|name|nchar|need|new|next|nextpage|no|nocr|noentry|none|normal|not|notfound|null|nullable|number|numeric|num_args|nvarchar|octet_length|of|off|old|on|only|open|optimization|option|options|or|order|otherwise|outer|output|page|pageno|pascal|pause|pdqpriority|percent|picture|pipe|pli|pow|precision|prepare|previous|prevpage|primary|print|printer|prior|private|privileges|procedure|program|prompt|public|put|quit|quit_flag|raise|range|read|readonly|real|record|recover|red|references|referencing|register|relative|remainder|remove|rename|reoptimization|repeatable|report|required|resolution|resource|restrict|resume|return|returned_sqlstate|returning|reverse|revoke|right|robin|role|rollback|rollforward|root|round|row|rowid|rowids|rows|row_count|run|scale|schema|screen|scroll|scr_line|second|section|select|serial|serializable|server_name|session|set|set_count|share|short|show|sitename|size|sizeof|skip|sleep|smallfloat|smallint|some|space|spaces|sql|sqlawarn|sqlca|sqlcode|sqlerrd|sqlerrm|sqlerror|sqlerrp|sqlstate|sqlwarning|sqrt|stability|start|startlog|static|statistics|status|stdev|step|stop|string|struct|subclass_origin|sum|switch|synonym|system|sysblobs|syschecks|syscolauth|syscoldepend|syscolumns|sysconstraints|sysdefaults|sysdepend|sysdistrib|sysfragauth|sysfragments|sysindexes|sysobjstate|sysopclstr|sysprocauth|sysprocbody|sysprocplan|sysprocedures|sysreferences|sysroleauth|syssyntable|syssynonyms|systabauth|systables|systrigbody|systriggers|sysusers|sysviews|sysviolations|tab|table|tables|tan|temp|text|then|through|thru|time|to|today|top|total|trace|trailer|trailing|transaction|trigger|triggers|trim|true|trunc|type|typedef|uncommitted|unconstrained|underline|union|unique|units|unload|unlock|unsigned|up|update|upshift|user|using|validate|value|values|varchar|variables|variance|varying|verify|view|violations|wait|waiting|warning|weekday|when|whenever|where|while|white|window|with|without|wordwrap|work|wrap|write|year|yellow|zerofill)\\b",
+			"name": "keyword.other.4gl"
+		},
+		{
+			"include": "#comments"
+		},
+		{
+			"captures": {
+				"1": {
+					"name": "keyword.other.create.4gl"
+				},
+				"2": {
+					"name": "keyword.other.4gl"
+				},
+				"5": {
+					"name": "entity.name.function.4gl"
+				}
+			},
+			"match": "(?i:^\\s*(create(?:\\s+or\\s+replace)?)\\s+(aggregate|conversion|database|function|group|(unique\\s+)?index|language|operator class|operator|rule|schema|sequence|table|tablespace|trigger|type|user|view)\\s+)(['\"`]?)(\\w+)\\4",
+			"name": "meta.create.4gl"
+		},
+		{
+			"captures": {
+				"1": {
+					"name": "keyword.other.create.4gl"
+				},
+				"2": {
+					"name": "keyword.other.4gl"
+				}
+				
+			},
+			"comment":"Todas las palabras reservadas en 4gl",
+			"match": "(?i:^\\s*(drop)\\s+(aggregate|conversion|database|domain|function|group|index|language|operator class|operator|rule|schema|sequence|table|tablespace|trigger|type|user|view))",
+			"name": "meta.drop.4gl"
+		},
+		{
+			"captures": {
+				"1": {
+					"name": "keyword.other.create.4gl"
+				},
+				"2": {
+					"name": "keyword.other.table.4gl"
+				},
+				"3": {
+					"name": "entity.name.function.4gl"
+				},
+				"4": {
+					"name": "keyword.other.cascade.4gl"
+				}
+			},
+			"match": "(?i:\\s*(drop)\\s+(table)\\s+(\\w+)(\\s+cascade)?\\b)",
+			"name": "meta.drop.4gl"
+		},
+		{
+			"captures": {
+				"1": {
+					"name": "keyword.other.create.4gl"
+				},
+				"2": {
+					"name": "keyword.other.table.4gl"
+				}
+			},
+			"match": "(?i:^\\s*(alter)\\s+(aggregate|conversion|database|function|group|index|language|operator class|operator|rule|schema|sequence|table|tablespace|trigger|type|user|view)\\s+)",
+			"name": "meta.alter.4gl"
+		},
+		{
+			"captures": {
+				"1": {
+					"name": "storage.type.4gl"
+				},
+				"2": {
+					"name": "storage.type.4gl"
+				},
+				"3": {
+					"name": "constant.numeric.4gl"
+				},
+				"4": {
+					"name": "storage.type.4gl"
+				},
+				"5": {
+					"name": "constant.numeric.4gl"
+				},
+				"6": {
+					"name": "storage.type.4gl"
+				},
+				"7": {
+					"name": "constant.numeric.4gl"
+				},
+				"8": {
+					"name": "constant.numeric.4gl"
+				},
+				"9": {
+					"name": "storage.type.4gl"
+				},
+				"10": {
+					"name": "constant.numeric.4gl"
+				},
+				"11": {
+					"name": "storage.type.4gl"
+				},
+				"12": {
+					"name": "storage.type.4gl"
+				},
+				"13": {
+					"name": "storage.type.4gl"
+				},
+				"14": {
+					"name": "constant.numeric.4gl"
+				},
+				"15": {
+					"name": "storage.type.4gl"
+				}
+			},
+			"match": "(?xi)\n\n\t\t\t\t# normal stuff, capture 1\n\t\t\t\t \\b(bigint|bigserial|bit|boolean|box|bytea|cidr|circle|date|double\\sprecision|inet|int|integer|line|lseg|macaddr|money|oid|path|point|polygon|real|serial|smallint|sysdate|text|blob)\\b\n\n\t\t\t\t# numeric suffix, capture 2 + 3i\n\t\t\t\t|\\b(bit\\svarying|character\\s(?:varying)?|tinyint|var\\schar|float|interval)\\((\\d+)\\)\n\n\t\t\t\t# optional numeric suffix, capture 4 + 5i\n\t\t\t\t|\\b(char|number|varchar\\d?)\\b(?:\\((\\d+)\\))?\n\n\t\t\t\t# special case, capture 6 + 7i + 8i\n\t\t\t\t|\\b(numeric|decimal)\\b(?:\\((\\d+),(\\d+)\\))?\n\n\t\t\t\t# special case, captures 9, 10i, 11\n\t\t\t\t|\\b(times?)\\b(?:\\((\\d+)\\))?(\\swith(?:out)?\\stime\\szone\\b)?\n\n\t\t\t\t# special case, captures 12, 13, 14i, 15\n\t\t\t\t|\\b(timestamp)(?:(s|tz))?\\b(?:\\((\\d+)\\))?(\\s(with|without)\\stime\\szone\\b)?\n\n\t\t\t"
+		},
+		{
+			"match": "(?i:\\b((?:primary|foreign)\\s+key|references|on\\sdelete(\\s+cascade)?|check|constraint)\\b)",
+			"name": "storage.modifier.4gl"
+		},
+		{
+			"match": "\\b\\d+\\b",
+			"name": "constant.numeric.4gl"
+		},
+		{
+			"match": "(?i:\\b(select(\\s+distinct)?|insert\\s+(ignore\\s+)?into|update|delete|from|set|where|group\\sby|or|like|and|union(\\s+all)?|having|order\\sby|limit|(inner|cross)\\s+join|join|straight_join|(left|right)(\\s+outer)?\\s+join|natural(\\s+(left|right)(\\s+outer)?)?\\s+join)\\b)",
+			"name": "keyword.other.DML.4gl"
+		},
+		{
+			"match": "(?i:\\b(on|off|((is\\s+)?not\\s+)?null)\\b)",
+			"name": "keyword.other.DDL.create.II.4gl"
+		},
+		{
+			"match": "(?i:\\bvalues\\b)",
+			"name": "keyword.other.DML.II.4gl"
+		},
+		{
+			"match": "(?i:\\b(begin(\\s+work)?|start\\s+transaction|commit(\\s+work)?|rollback(\\s+work)?)\\b)",
+			"name": "keyword.other.LUW.4gl"
+		},
+		{
+			"match": "(?i:\\b(grant(\\swith\\sgrant\\soption)?|revoke)\\b)",
+			"name": "keyword.other.authorization.4gl"
+		},
+		{
+			"match": "(?i:\\bin\\b)",
+			"name": "keyword.other.data-integrity.4gl"
+		},
+		{
+			"match": "(?i:^\\s*(comment\\s+on\\s+(table|column|aggregate|constraint|database|domain|function|index|operator|rule|schema|sequence|trigger|type|view))\\s+.*?\\s+(is)\\s+)",
+			"name": "keyword.other.object-comments.4gl"
+		},
+		{
+			"match": "(?i)\\bAS\\b",
+			"name": "keyword.other.alias.4gl"
+		},
+		{
+			"match": "(?i)\\b(DESC|ASC)\\b",
+			"name": "keyword.other.order.4gl"
+		},
+		{
+			"match": "\\*",
+			"name": "keyword.operator.star.4gl"
+		},
+		{
+			"match": "[!<>]?=|<>|<|>",
+			"name": "keyword.operator.comparison.4gl"
+		},
+		{
+			"match": "-|\\+|/",
+			"name": "keyword.operator.math.4gl"
+		},
+		{
+			"match": "\\|\\|",
+			"name": "keyword.operator.concatenator.4gl"
+		},
+		{
+			"match": "(?i)\\b(CURRENT_(DATE|TIME(STAMP)?|USER)|(SESSION|SYSTEM)_USER)\\b",
+			"name": "support.function.scalar.4gl"
+		},
+		{
+			"match": "(?i)\\b(AVG|COUNT|MIN|MAX|SUM)(?=\\s*\\()",
+			"name": "support.function.aggregate.4gl"
+		},
+		{
+			"match": "(?i)\\b(CONCATENATE|CONVERT|LOWER|SUBSTRING|TRANSLATE|TRIM|UPPER)\\b",
+			"name": "support.function.string.4gl"
+		},
+		{
+			"captures": {
+				"1": {
+					"name": "constant.other.database-name.4gl"
+				},
+				"2": {
+					"name": "constant.other.table-name.4gl"
+				}
+			},
+			"match": "(\\w+?)\\.(\\w+)"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#regexps"
+		},
+		{
+			"captures": {
+				"1": {
+					"name": "punctuation.section.scope.begin.4gl"
+				},
+				"2": {
+					"name": "punctuation.section.scope.end.4gl"
+				}
+			},
+			"comment": "Especial ↩ ",
+			"match": "(\\()(\\))",
+			"name": "meta.block.4gl"
+		}
+	],
+	"repository": {
+		"comments": {
+			"patterns": [
+				{
+					"begin": "(^[ \\t]+)?(?=--)",
+					"beginCaptures": {
+						"1": {
+							"name": "punctuation.whitespace.comment.leading.4gl"
+						}
+					},
+					"end": "(?!\\G)",
+					"patterns": [
+						{
+							"begin": "--",
+							"beginCaptures": {
+								"0": {
+									"name": "punctuation.definition.comment.4gl"
+								}
+							},
+							"end": "\\n",
+							"name": "comment.line.double-dash.4gl"
+						}
+					]
+				},
+				{
+					"begin": "(^[ \\t]+)?(?=#)",
+					"beginCaptures": {
+						"1": {
+							"name": "punctuation.whitespace.comment.leading.4gl"
+						}
+					},
+					"end": "(?!\\G)",
+					"patterns": [
+						{
+							"begin": "#",
+							"beginCaptures": {
+								"0": {
+									"name": "punctuation.definition.comment.4gl"
+								}
+							},
+							"end": "\\n",
+							"name": "comment.line.numeral.4gl"
+						}
+					]
+				},
+				{
+					"begin": "(^[ \\t]+)?(?=#)",
+					"beginCaptures": {
+						"1": {
+							"name": "punctuation.whitespace.comment.leading.4gl"
+						}
+					},
+					"end": "(?!\\G)",
+					"patterns": []
+				},
+				{
+					"begin": "{",
+					"captures": {
+						"0": {
+							"name": "punctuation.definition.comment.4gl"
+						}
+					},
+					"end": "}",
+					"name": "comment.block.c"
+				}
+			]
+		},
+		"regexps": {
+			"patterns": [
+				{
+					"begin": "/(?=\\S.*/)",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.string.begin.4gl"
+						}
+					},
+					"end": "/",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.definition.string.end.4gl"
+						}
+					},
+					"name": "string.regexp.4gl",
+					"patterns": [
+						{
+							"include": "#string_interpolation"
+						},
+						{
+							"match": "\\\\/",
+							"name": "constant.character.escape.slash.4gl"
+						}
+					]
+				},
+				{
+					"begin": "%r\\{",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.string.begin.4gl"
+						}
+					},
+					"end": "\\}",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.definition.string.end.4gl"
+						}
+					},
+					"name": "string.regexp.modr.4gl",
+					"patterns": [
+						{
+							"include": "#string_interpolation"
+						}
+					]
+				}
+			]
+		},
+		"string_escape": {
+			"match": "\\\\.",
+			"name": "constant.character.escape.4gl"
+		},
+		"string_interpolation": {
+			"captures": {
+				"1": {
+					"name": "punctuation.definition.string.begin.4gl"
+				},
+				"3": {
+					"name": "punctuation.definition.string.end.4gl"
+				}
+			},
+			"match": "(#\\{)([^\\}]*)(\\})",
+			"name": "string.interpolated.4gl"
+		},
+		"strings": {
+			"patterns": [
+				{
+					"captures": {
+						"1": {
+							"name": "punctuation.definition.string.begin.4gl"
+						},
+						"2": {
+							"name": "punctuation.definition.string.end.4gl"
+						}
+					},
+					"match": "(')[^']*(')",
+					"name": "string.quoted.single.4gl"
+				},
+				{
+					"begin": "'",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.string.begin.4gl"
+						}
+					},
+					"end": "'",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.definition.string.end.4gl"
+						}
+					},
+					"name": "string.quoted.single.4gl",
+					"patterns": [
+						{
+							"include": "#string_escape"
+						}
+					]
+				},
+				{
+					"captures": {
+						"1": {
+							"name": "punctuation.definition.string.begin.4gl"
+						},
+						"2": {
+							"name": "punctuation.definition.string.end.4gl"
+						}
+					},
+					"match": "(`)[^`\\\\]*(`)",
+					"name": "string.quoted.other.backtick.4gl"
+				},
+				{
+					"begin": "`",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.string.begin.4gl"
+						}
+					},
+					"end": "`",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.definition.string.end.4gl"
+						}
+					},
+					"name": "string.quoted.other.backtick.4gl",
+					"patterns": [
+						{
+							"include": "#string_escape"
+						}
+					]
+				},
+				{
+					"captures": {
+						"1": {
+							"name": "punctuation.definition.string.begin.4gl"
+						},
+						"2": {
+							"name": "punctuation.definition.string.end.4gl"
+						}
+					},
+					"match": "(\")[^\"#]*(\")",
+					"name": "string.quoted.double.4gl"
+				},
+				{
+					"begin": "\"",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.string.begin.4gl"
+						}
+					},
+					"end": "\"",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.definition.string.end.4gl"
+						}
+					},
+					"name": "string.quoted.double.4gl",
+					"patterns": [
+						{
+							"include": "#string_interpolation"
+						}
+					]
+				},
+				{
+					"begin": "%\\{",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.string.begin.4gl"
+						}
+					},
+					"end": "\\}",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.definition.string.end.4gl"
+						}
+					},
+					"name": "string.other.quoted.brackets.4gl",
+					"patterns": [
+						{
+							"include": "#string_interpolation"
+						}
+					]
+				}
+			]
+		}
+	}
+}
