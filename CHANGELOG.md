@@ -5,3 +5,7 @@ Este archivo sigue los lineamientos de [Keep a Changelog](http://keepachangelog.
 
 ## [0.0.1]
 - Version inicial
+## [0.0.2]
+- Se corrigen y mejoran los snippets
+- Se mejora el README
+- Se mejora el SyntaxHighlighting, (Basado en el libro de IBM, Informix 4GL Reference Manual)

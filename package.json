@@ -2,53 +2,58 @@
     "name": "4gl",
     "displayName": "4gl",
     "description": "4GL Programming Language, and 4gl Snippets",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "publisher": "garysan",
     "author": {
-        "name":"Ariel Gary Sandi Vigabriel",
-        "email":"gary.gsv@gmail.com",
+        "name": "Ariel Gary Sandi Vigabriel",
+        "email": "gary.gsv@gmail.com",
         "url": "http://garysandi.blogspot.com"
-
     },
-    
-    "repository":{
-        "type":"git",
-        "url":"https://github.com/garysan/4gl.git"
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/garysan/4gl.git"
     },
-    "keywords":[
-        "4gl","4gl snippets","4GL Programming Language"
+    "keywords": [
+        "4gl",
+        "4gl snippets",
+        "4GL Programming Language"
     ],
     "engines": {
-        "vscode": "^1.18.0"
-    },
-    "galleryBanner": {
-        "color": "#403757",
-        "theme": "dark"
+        "vscode": "^1.20.0"
     },
     "icon": "images/4gl.png",
     "badges": [
         {
-        "url":"https://github.com/garysan/4gl/issues",
-        "href":"https://img.shields.io/github/issues/garysan/4gl.svg",
-        "description": "Issues"
+            "url": "https://github.com/garysan/4gl/issues",
+            "href": "https://img.shields.io/github/issues/garysan/4gl.svg",
+            "description": "Issues"
         }
     ],
     "categories": [
-        "Languages",
-        "Snippets"
+        "Programming Languages"
     ],
     "contributes": {
-        "languages": [{
-            "id": "4gl",
-            "aliases": ["4gl","4GL"],
-            "extensions": [".4gl",".per"],
-            "configuration": "./language-configuration.json"
-        }],
-        "grammars": [{
-            "language": "4gl",
-            "scopeName": "source.4gl",
-            "path": "./syntaxes/4gl.tmLanguage.json"
-        }],
+        "languages": [
+            {
+                "id": "4gl",
+                "aliases": [
+                    "4gl",
+                    "4GL"
+                ],
+                "extensions": [
+                    ".4gl",
+                    ".per"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "4gl",
+                "scopeName": "source.4gl",
+                "path": "./syntaxes/4gl.tmLanguage.json"
+            }
+        ],
         "snippets": [
             {
                 "language": "4gl",
@@ -56,7 +61,11 @@
             }
         ],
         "configurationDefaults": {
-            "[4gl]":{
+            "[4gl]": {
+                "files.encoding": "cp437",
+                "files.insertFinalNewline": true
+            },
+            "[per]": {
                 "files.encoding": "cp437",
                 "files.insertFinalNewline": true
             }
