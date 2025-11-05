@@ -9,3 +9,6 @@ Este archivo sigue los lineamientos de [Keep a Changelog](http://keepachangelog.
 - Se corrigen y mejoran los snippets
 - Se mejora el README
 - Se mejora el SyntaxHighlighting, (Basado en el libro de IBM, Informix 4GL Reference Manual)
+
+## [1.0.0]
+- se optimiza resaltado para tipos y datos de informix 4gl en base a documentacion de IBM
