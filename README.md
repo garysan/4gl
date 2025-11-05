@@ -7,13 +7,8 @@ Esta extensión permite usar 4GL en VSCode, asi tambien se incluyeron varios sni
 - Snippets (Para acelerar el desarrollo)
 - Syntax highlighting (Mejorado)
 
-## En Desarrollo
-- Formato del documento
-- Mejora del Syntax highlighting
-- Autocompletado del código
-
 ## Requirimientos
-- Visual Studio Code 1.20 o Superior
+- Visual Studio Code 1.60 o Superior
 
 ## Versiones
 Por favor ver: https://github.com/garysan/4gl/blob/master/CHANGELOG.md

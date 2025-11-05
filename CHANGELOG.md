@@ -12,3 +12,6 @@ Este archivo sigue los lineamientos de [Keep a Changelog](http://keepachangelog.
 
 ## [1.0.0]
 - se optimiza resaltado para tipos y datos de informix 4gl en base a documentacion de IBM
+
+## [1.0.1]
+- vsix re-uploaded.
