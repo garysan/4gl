@@ -2,7 +2,7 @@
     "name": "4gl",
     "displayName": "4gl",
     "description": "4GL Programming Language, and 4gl Snippets",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "publisher": "garysan",
     "author": {
         "name": "Ariel Gary Sandi Vigabriel",
@@ -21,7 +21,7 @@
         "4GL Programming Language"
     ],
     "engines": {
-        "vscode": "^1.20.0"
+        "vscode": "^1.60.0"
     },
     "icon": "images/4gl.png",
     "badges": [

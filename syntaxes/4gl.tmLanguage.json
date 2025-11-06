@@ -19,12 +19,12 @@
         "main": {
             "name": "meta.function.4gl",
             "begin": "\\b(?i:(main))\\b",
-            "beginCaptures": { 
-                "1": { "name": "entity.name.function.4gl" } 
+            "beginCaptures": {
+                "1": { "name": "entity.name.function.4gl" }
             },
             "end": "\\b(?i:end\\s+main)\\b",
-            "endCaptures": { 
-                "0": { "name": "storage.type.main.4gl" } 
+            "endCaptures": {
+                "0": { "name": "storage.type.main.4gl" }
             },
             "patterns": [{ "include": "#4gl" }]
         },
@@ -37,7 +37,7 @@
                 "2": { "name": "entity.name.function.4gl" },
                 "3": { "name": "variable.parameter.function.4gl" }
             },
-            "end": "\\b(?i:(end)\\s*(function|report))\\b",
+            "end": "\\b(?i:(end+function|report))\\b",
             "endCaptures": {
                 "1": { "name": "keyword.control.4gl" },
                 "2": { "name": "storage.type.function.4gl" }
@@ -69,7 +69,7 @@
             "patterns": [
                 {
                     "comment": "Bloques o funciones en bloque y similares",
-                    "match": "\\b(?i:(menu|if not|end foreach|end while|end case|end for|end if|start report|finish report|otherwise|elseif|foreach|while|return|case|when|then|else|for|if|exit program|input|end input|end menu))\\b",
+                    "match": "\\b(?i:(menu|end function|if not|end foreach|end while|end case|end for|end if|start report|finish report|otherwise|elseif|foreach|while|return|case|when|then|else|for|if|exit program|input|end input|end menu))\\b",
                     "name": "keyword.control.block.4gl"
                 },
                 {
@@ -78,24 +78,24 @@
                     "match": "\\b(?i:(time|today|true|false|CHAR|CHAR NOT NULL|SMALLINT|SMALLINT NOT NULL|INTEGER|INTEGER NOT NULL|FLOAT|FLOAT NOT NULL|SMALLFLOAT|SMALLFLOAT NOT NULL|DECIMAL|DECIMAL NOT NULL|SERIAL|SERIAL NOT NULL|DATE|DATE NOT NULL|MONEY|MONEY NOT NULL|NULL|DATETIME|DATETIME NOT NULL|BYTE|BYTE NOT NULL|TEXT|TEXT NOT NULL|VARCHAR|VARCHAR NOT NULL|INTERVAL|INTERVAL NOT NULL|NCHAR|NCHAR NOT NULL|NVCHAR|NVCHAR NOT NULL|INT8|INT8 NOT NULL|SERIAL8|SERIAL8 NOT NULL|SET|MULTISET|LIST|ROW|COLLECTION|ROWREF|LVARCHAR|LVARCHAR NOT NULL|CLOB|BLOB|BOOLEAN|BIGINT|BIGSERIAL))\\b"
                 },
                 {
-                    "comment": "SQL Statements",
+                    "comment": "SQL Statements and operators",
                     "name": "keyword.other.sql.4gl",
-                    "match": "\\b(?i:(select|insert|from|update|where|and|or|between|join|delete|create|drop|alter|connect|disconnect|grant|revoke|WITHOUT DEFAULTS))\\b"
+                    "match": "(?i)(?<![\\w_])(select|insert|update|delete|merge|create|drop|alter|truncate|replace|grant|revoke|connect|disconnect|begin\\s+work|end\\s+work|commit\\s+work|rollback\\s+work|savepoint|release\\s+savepoint|lock\\s+table|unlock\\s+table|lock\\s+database|unlock\\s+database|set|reset|configure|update\\s+statistics|create\\s+index|drop\\s+index|create\\s+table|drop\\s+table|create\\s+view|drop\\s+view|create\\s+procedure|drop\\s+procedure|create\\s+function|drop\\s+function|create\\s+trigger|drop\\s+trigger|allocate\\s+collection|allocate\\s+row|allocate\\s+descriptor|alter\\s+fragment|alter\\s+access_method|union|union\\s+all|intersect|except|where|from|group\\s+by|having|order\\s+by|order|join|inner\\s+join|left\\s+join|right\\s+join|full\\s+join|cross\\s+join|into\\s+temp|into|values|with|without\\s+defaults|for\\s+update|for\\s+share|using|between|like|in|exists|any|all|distinct|first|skip|rows|and|or|not|is|null|asc|desc)(?![\\w_])"
                 },
                 {
-                    "comment": "Transaccionales y de BD",
+                    "comment": "Transaccionales y de 4gl propios",
                     "name": "support.type.source.4GL",
-                    "match": "\\b(?i)(INTO|prepare|SCROLL|fetch first|STATUS|ROLLBACK WORK|commit work|begin work|close database|database|RETURNING|run|on key|key|before field|after input|after|before|continue while|continue foreach|fetch|close)\\b"
+                    "match": "\\b(?i)(INTO|prepare|SCROLL|OPEN|FREE|fetch first|STATUS|WITH HOLD|ROLLBACK WORK|commit work|begin work|close database|database|RETURNING|run|on key|key|before field|after input|after|before|continue while|display form|display to|display at|display|continue foreach|fetch|close)\\b"
                 },
                 {
                     "comment": "Variable definitions",
                     "name": "storage.modifier.variable.4gl",
-                    "match": "\\b(?i:(command|initialize to|define|message|construct|let|record|LIKE|globals|DECLARE|cursor for|cursor|output format|OPTIONS|PROMPT|LINE|error|sleep|previous|initialize))\\b"
+                    "match": "\\b(?i:(command|end record|record|initialize to|define|message|construct|let|LIKE|globals|DECLARE|cursor for|cursor|output format|OPTIONS|PROMPT|LINE|error|sleep|previous|initialize))\\b"
                 },
                 {
                     "comment": "Funciones propias y operadores de informix o variables reservadas en 4gl o formularios",
                     "name": "support.function.4gl",
-                    "match": "\\b(?i:(display form|open form|display|OPEN FORM|DEFER INTERRUPT|exit input|next field|to|by name|NOTFOUND|ascii|clear form|clipped|column|current|date|lineno|pageno|space|spaces|fgl_getkey|fgl_getenv|fgl_drawbox|length|year|month|day|mdy|weekday|upshift|downshift))\\b"
+                    "match": "\\b(?i:(open form|OPEN FORM|DEFER INTERRUPT|exit input|next field|to|by name|NOTFOUND|ascii|clear form|clipped|column|current|date|lineno|pageno|space|spaces|fgl_getkey|fgl_getenv|fgl_drawbox|length|year|month|day|mdy|weekday|upshift|downshift))\\b"
                 },
                 {
                     "comment": "Numeric constants",
