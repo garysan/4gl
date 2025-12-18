@@ -15,3 +15,12 @@ Este archivo sigue los lineamientos de [Keep a Changelog](http://keepachangelog.
 
 ## [1.0.1]
 - vsix re-uploaded.
+
+## [1.0.2]
+- Ajustes menores
+
+## [1.0.3]
+- Ajuste a sintaxis
+
+## [1.0.4]
+- Carga funciones en esquema
