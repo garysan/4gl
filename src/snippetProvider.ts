@@ -34,8 +34,8 @@ function loadSnippetFile(root: string, filenames: string[]): SnippetMap | undefi
 }
 
 export function registerLocalizedSnippets(context: vscode.ExtensionContext) {
-  const uiLang = vscode.env.language?.toLowerCase() || "en";
-  const locale = uiLang.startsWith("es") ? "es" : "en";
+  const uiLang = vscode.env.language?.toLowerCase() || "es";
+  const locale = uiLang.startsWith("en") ? "en" : "es";
 
   const candidates = [
     `snippets.${locale}.json`,
