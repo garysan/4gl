@@ -1,4 +1,5 @@
 import * as vscode from "vscode";
+import { registerLocalizedSnippets } from "./snippetProvider";
 
 export function activate(context: vscode.ExtensionContext) {
   const selector = { scheme: "file", language: "4gl" };
@@ -10,6 +11,9 @@ export function activate(context: vscode.ExtensionContext) {
   context.subscriptions.push(
     vscode.languages.registerDefinitionProvider(selector, new SwmfDefinitionProvider())
   );
+
+  // Register localized snippets based on UI language (es/en) with fallbacks
+  registerLocalizedSnippets(context);
 }
 
 class SwmfConfigDocumentSymbolProvider implements vscode.DocumentSymbolProvider {

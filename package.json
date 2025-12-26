@@ -64,12 +64,6 @@
                 "path": "./syntaxes/4gl.tmLanguage.json"
             }
         ],
-        "snippets": [
-            {
-                "language": "4gl",
-                "path": "./snippets/snippets.json"
-            }
-        ],
         "configurationDefaults": {
             "[4gl]": {
                 "files.encoding": "cp437",
