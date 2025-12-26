@@ -1,7 +1,7 @@
 {
     "name": "4gl",
-    "displayName": "4gl Informix",
-    "description": "4GL Programming Language, and 4gl Snippets",
+    "displayName": "%extension.displayName%",
+    "description": "%extension.description%",
     "version": "1.0.4",
     "publisher": "garysan",
     "author": {

@@ -1,6 +1,10 @@
 # 4gl README
+
 4GL Syntax and Snippets for VSCode
 Esta es la extensión definitiva para trabajar con 4gl en VSCODE.
+
+🌐 **Other Languages:**
+[English](README.en.md)
 
 ## Caracteristicas
 Esta extensión permite usar 4GL en VSCode, asi tambien se incluyeron varios snippets que servirán para un desarrollo mas ágil.
@@ -67,8 +71,19 @@ Por favor enviame un correo a gary.gsv@gmail.com
 #Licencia
 MIT License, por favor leer el archivo LICENSE
 
+## Internacionalización (i18n)
+Esta extensión está lista para ser traducida y mostrar mensajes en el idioma del usuario.
+
+- Manifest del paquete: los campos visibles del `package.json` se localizan mediante `package.nls.json` y sus variantes por idioma, por ejemplo `package.nls.es.json`.
+- Mensajes en tiempo de ejecución: los textos mostrados por la extensión usan la API nativa `vscode.l10n.t(...)`. Las traducciones se suministran en archivos dentro de la carpeta `l10n/` con el formato `bundle.l10n.<idioma>.json`.
+
+### Cómo agregar un nuevo idioma
+1. Cree `package.nls.<idioma>.json` en la raíz con las traducciones de las claves del manifest.
+2. Cree `l10n/bundle.l10n.<idioma>.json` con las traducciones de los mensajes en tiempo de ejecución.
+3. Use el código de idioma según la configuración de VS Code (por ejemplo, `es`, `fr`, `pt-BR`).
+4. Publique la extensión o recárguela en VS Code. Si su VS Code está en ese idioma, verá las traducciones automáticamente.
+
 # Source
 [Github](https://github.com/garysan/4gl)
 
 **Enjoy!**
-
