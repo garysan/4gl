@@ -4,9 +4,9 @@
         "body": [
             "###############################################################################",
             "# PROGRAM : $TM_FILENAME",
-            "# CREATED : $CURRENT_DATE/$CURRENT_MONTH/$CURRENT_YEAR, $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
+            "# CREATED : $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATET$CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
             "# VERSION : ${1:version}",
-            "# AUTHOR    : ${2:author}",
+            "# AUTHOR  : ${2:author}",
             "# PURPOSE : ${3:purpose}",
             "# DEPENDENCIES:",
             "#\t\t${4:dependencies}",
@@ -42,7 +42,7 @@
     "select into": {
         "prefix": "select into",
         "body": [
-            "SELECT ${1:fields} INTO     ${2:target}",
+            "SELECT ${1:fields} INTO   ${2:target}",
             "FROM   ${3:tables}",
             "WHERE  ${4:condition}",
             "AND    ${5:condition}",

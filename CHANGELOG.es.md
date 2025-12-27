@@ -5,6 +5,7 @@ Este archivo sigue los lineamientos de [Keep a Changelog](http://keepachangelog.
 
 ## [0.0.1]
 - Version inicial
+
 ## [0.0.2]
 - Se corrigen y mejoran los snippets
 - Se mejora el README
@@ -24,3 +25,6 @@ Este archivo sigue los lineamientos de [Keep a Changelog](http://keepachangelog.
 
 ## [1.0.4]
 - Carga funciones en esquema
+
+## [1.1.0]
+- Implementar i18n (en) para la documentación, el snippets y el DocumentSymbols

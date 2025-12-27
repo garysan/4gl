@@ -53,7 +53,7 @@ Por favor ver: https://github.com/garysan/4gl/blob/master/CHANGELOG.md
 | `preparedForeach`                 | Define un prepared statment y lo usa directamente en un foreach, previamente debe tener definida una variable para soportar el SQL |
 
 ## Forma de uso
-Puede presionar `Ctrl` +` Space` (Windows, Linux) o `Cmd` +` Space` (MAC) para desplegar los snippets disponibles.
+Puede presionar `Ctrl` +` Space` (Windows, Linux) o `Cmd` +` Space` (MAC) para desplegar los snippets disponibles.  El comando se llama "Snippets: Insert Snippet" y podría requerir un cambio en la configuración (denominada "Keybinding").
 
 ## Demo (encabezado/seccion)
 ![Demo](https://i.imgur.com/ykwU84y.gif?raw=true)
@@ -75,13 +75,15 @@ MIT License, por favor leer el archivo LICENSE
 Esta extensión está lista para ser traducida y mostrar mensajes en el idioma del usuario.
 
 - Manifest del paquete: los campos visibles del `package.json` se localizan mediante `package.nls.json` y sus variantes por idioma, por ejemplo `package.nls.es.json`.
-- Mensajes en tiempo de ejecución: los textos mostrados por la extensión usan la API nativa `vscode.l10n.t(...)`. Las traducciones se suministran en archivos dentro de la carpeta `l10n/` con el formato `bundle.l10n.<idioma>.json`.
+- Mensajes en tiempo de ejecución: los textos mostrados por la extensión en el panel "Esquema" utilizan la API nativa `vscode.l10n.t(...)`. Las traducciones se suministran en archivos dentro de la carpeta `l10n/` con el formato `bundle.l10n.<idioma>.json`.
+- Ejemplos de código: En la carpeta `snippets/` se proporcionan fragmentos de código enriquecidos con comentarios y nombres de parámetros localizados, en el siguiente formato: `snippets.<idioma>.json`.
 
 ### Cómo agregar un nuevo idioma
 1. Cree `package.nls.<idioma>.json` en la raíz con las traducciones de las claves del manifest.
 2. Cree `l10n/bundle.l10n.<idioma>.json` con las traducciones de los mensajes en tiempo de ejecución.
-3. Use el código de idioma según la configuración de VS Code (por ejemplo, `es`, `fr`, `pt-BR`).
-4. Publique la extensión o recárguela en VS Code. Si su VS Code está en ese idioma, verá las traducciones automáticamente.
+3. Cree `snippets/snippets.<idioma>.json` con las traducciones de los ejemplos de código.
+4. Use el código de idioma según la configuración de VS Code (por ejemplo, `es`, `fr`, `pt-BR`).
+5. Publique la extensión o recárguela en VS Code. Si su VS Code está en ese idioma, verá las traducciones automáticamente.
 
 # Source
 [Github](https://github.com/garysan/4gl)
