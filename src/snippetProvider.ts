@@ -71,6 +71,10 @@ export function registerLocalizedSnippets(context: vscode.ExtensionContext) {
   }
 
   const selector: vscode.DocumentSelector = [{ language: "4gl", scheme: "file" }];
+  // Completion items from a CompletionItemProvider populate IntelliSense with
+  // localized items, but do not populate the “Insert Snippet” picker. See
+  // contributes.snippets in package.json for the one canonical source for the
+  // picker.
   const provider: vscode.CompletionItemProvider = {
     provideCompletionItems() {
       return items;
