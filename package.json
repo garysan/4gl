@@ -1,8 +1,8 @@
 {
     "name": "4gl",
-    "displayName": "4gl Informix",
-    "description": "4GL Programming Language, and 4gl Snippets",
-    "version": "1.0.4",
+    "displayName": "%extension.displayName%",
+    "description": "%extension.description%",
+    "version": "1.1.0",
     "publisher": "garysan",
     "author": {
         "name": "Ariel Gary Sandi Vigabriel",
@@ -22,7 +22,7 @@
         "4GL Programming Language"
     ],
     "engines": {
-        "vscode": "^1.44.0"
+        "vscode": "^1.85.0"
     },
     "icon": "images/4gl.png",
     "badges": [
@@ -39,6 +39,7 @@
         "Other"
     ],
     "main": "./out/extension.js",
+    "l10n": "./l10n",
     "activationEvents": [
         "onLanguage:4gl"
     ],
@@ -67,7 +68,11 @@
         "snippets": [
             {
                 "language": "4gl",
-                "path": "./snippets/snippets.json"
+                "path": "./snippets/snippets.en.json"
+            },
+            {
+                "language": "4gl",
+                "path": "./snippets/snippets.es.json"
             }
         ],
         "configurationDefaults": {
@@ -88,8 +93,10 @@
         "pretest": "npm run compile"
     },
     "devDependencies": {
-        "@types/vscode": "^1.44.0",
+        "@types/node": "^20.19.27",
+        "@types/vscode": "^1.85.0",
         "typescript": "^4.9.5",
-        "vscode-test": "^1.3.0"
+        "vscode-test": "^1.3.0",
+        "vscode-nls-dev": "^4.0.4"
     }
 }

@@ -30,11 +30,35 @@ class SwmfConfigDocumentSymbolProvider implements vscode.DocumentSymbolProvider 
       if (line.text.match(/^ *function /i)) {
         symbols.push(new vscode.DocumentSymbol(this.formatFunc(line.text), "", func, line.range, line.range));
       } else if (line.text.match(/^ *report /i)) {
-        symbols.push(new vscode.DocumentSymbol(this.formatRep(line.text), "Report", func, line.range, line.range));
+        symbols.push(
+          new vscode.DocumentSymbol(
+            this.formatRep(line.text),
+            vscode.l10n.t("Report"),
+            func,
+            line.range,
+            line.range
+          )
+        );
       } else if (line.text.startsWith("MAIN")) {
-        symbols.push(new vscode.DocumentSymbol("MAIN", "Start Program", func, line.range, line.range));
+        symbols.push(
+          new vscode.DocumentSymbol(
+            "MAIN",
+            vscode.l10n.t("Start Program"),
+            func,
+            line.range,
+            line.range
+          )
+        );
       } else if (line.text.startsWith("GLOBALS")) {
-        symbols.push(new vscode.DocumentSymbol("GLOBALS", "Global Variables", key, line.range, line.range));
+        symbols.push(
+          new vscode.DocumentSymbol(
+            "GLOBALS",
+            vscode.l10n.t("Global Variables"),
+            key,
+            line.range,
+            line.range
+          )
+        );
       }
     }
 
