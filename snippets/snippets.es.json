@@ -1,5 +1,5 @@
 {
-    "encabezado": {
+    "encabezado-es": {
         "prefix": "encabezado",
         "body": [
             "###############################################################################",
@@ -14,17 +14,17 @@
         ],
         "description": "Encabezado para programas 4gl"
     },
-    "seccion": {
+    "seccion-es": {
         "prefix": "seccion",
         "body": [
             "#######################################",
             "# ${1:Descripción}",
             "#######################################\n",
-            "${2:}"
+            "$2"
         ],
         "description": "Aqui puede definir el encabezado o documentación de una función o seccion de funciones o incluso de un bloque de codigo"
     },
-    "select": {
+    "select-es": {
         "prefix": "select",
         "body": [
             "SELECT ${1:campos}",
@@ -34,12 +34,12 @@
             "ORDER BY ${5:nrocolumna}",
             "IF STATUS = NOTFOUND THEN",
             "\t--Codigo en caso de que no exista registro",
-            "\t${6:}",
+            "\t$6",
             "END IF"
         ],
         "description": "Escribe un SELECT con la estructura clasica con un ORDER BY columna o columnas identifacadas por el nro de columna, Forma de uso: campos,tablas y condiciones "
     },
-    "select into": {
+    "select into-es": {
         "prefix": "select into",
         "body": [
             "SELECT ${1:campos} INTO   ${2:contenedor}",
@@ -49,24 +49,24 @@
             "ORDER BY ${6:nrocolumna}",
             "IF STATUS = NOTFOUND THEN",
             "\t--Codigo en caso de que no exista registro",
-            "\t${7:}",
+            "\t$7",
             "END IF"
         ],
         "description": "Retorna los valores de un SELECT a un contenedor definido (generalmente un RECORD) o variables indicadas."
     },
-    "insert": {
+    "insert-es": {
         "prefix": "insert",
         "body": [
             "INSERT INTO ${1:tabla}",
             "VALUES (${2:campos})",
             "IF STATUS < 0 THEN",
             "\t--Codigo en caso de error",
-            "\t${3:}",
+            "\t$3",
             "END IF"
         ],
         "description": "Insertar en la base de datos"
     },
-    "update": {
+    "update-es": {
         "prefix": "update",
         "body": [
             "UPDATE ${1:tabla}",
@@ -75,12 +75,12 @@
             "AND    ${4:condicion}",
             "IF STATUS < 0 THEN",
             "\t--Codigo en caso de error",
-            "\t${5:}",
+            "\t$5",
             "END IF"
         ],
         "description": "Actualizar en la base de datos"
     },
-    "delete": {
+    "delete-es": {
         "prefix": "delete",
         "body": [
             "DELETE FROM ${1:tabla}",
@@ -88,44 +88,44 @@
             "AND    ${3:condicion}",
             "IF STATUS < 0 THEN",
             "\t--Codigo en caso de error",
-            "\t${4:}",
+            "\t$4",
             "END IF"
         ],
         "description": "Borrar de la Base de datos"
     },
-    "if": {
+    "if-es": {
         "prefix": "if",
         "body": [
             "IF ${1:condicion} THEN",
-            "\t${2:}",
+            "\t$2",
             "END IF\n"
         ],
         "description": "Condicion IF"
     },
-    "foreach": {
+    "foreach-es": {
         "prefix": "foreach",
         "body": [
             "INITIALIZE ${1:record}.* TO NULL",
             "FOREACH ${2:nombcursor} INTO ${1:record}",
-            "\t${3:}",
+            "\t$3",
             "END FOREACH"
         ],
         "description": "Foreach en cursor"
     },
-    "case": {
+    "case-es": {
         "prefix": "case",
         "body": [
             "CASE ${1:variable} ",
             "\tWHEN ${2:#valor}",
-            "\t\t${3:}",
+            "\t\t$3",
             "\tOTHERWISE",
-            "\t\t${4:}",
+            "\t\t$4",
             "END CASE",
             "\n"
         ],
         "description": "Declara la estructura basica de un CASE"
     },
-    "cursor": {
+    "cursor-es": {
         "prefix": "cursor",
         "body": [
             "DECLARE ${1:nombcursor} CURSOR FOR ",
@@ -137,7 +137,7 @@
         ],
         "description": "Declaración de cursor simple compuesto por un SELECT"
     },
-    "cursorForeach": {
+    "cursorForeach-es": {
         "prefix": "cursorForeach",
         "body": [
             "DECLARE ${1:cursor} CURSOR FOR ",
@@ -147,31 +147,31 @@
             "\tAND    ${5:condicion}",
             "\tORDER BY ${6:nrocolumna}",
             "FOREACH ${1:cursor} INTO ${7:record}\n",
-            "${8:}\n",
+            "$8\n",
             "END FOREACH"
         ],
         "description": "Cursor que incluye un SELECT y un FOREACH "
     },
-    "funcion": {
+    "funcion-es": {
         "prefix": "funcion",
         "body": [
             "FUNCTION ${1:nombrefuncion}(${2:parametros})",
             "\tDEFINE \t${3:variable}\t${4:tipo},",
             "\t\t\t${5:variable}\t${6:tipo}",
-            "\t\t${7:}",
+            "\t\t$7",
             "\tRETURN ${8:retorno}",
             "END FUNCTION\n"
         ],
         "description": "Declara funcion con las definiciones basicas."
     },
-    "record": {
+    "record-es": {
         "prefix": "record",
         "body": [
             "${1:var} RECORD LIKE ${2:tabla}.*,"
         ],
         "description": "Declara un record basado en una tabla completa"
     },
-    "recordvar": {
+    "recordvar-es": {
         "prefix": "recordvar",
         "body": [
             "${1:var} RECORD ",
@@ -181,7 +181,7 @@
         ],
         "description": "Declarar record con estructura propia, ya sea definición manual o similar al campo de una tabla"
     },
-    "error": {
+    "error-es": {
         "prefix": "error",
         "body": [
             "ERROR \"${1:mensaje}\"",
@@ -189,7 +189,7 @@
         ],
         "description": "Mostrar error con sleep"
     },
-    "display": {
+    "display-es": {
         "prefix": "display",
         "body": [
             "DISPLAY \"${1:valor}\"",
@@ -197,21 +197,21 @@
         ],
         "description": "Mostrar display con sleep"
     },
-    "displaybyname": {
+    "displaybyname-es": {
         "prefix": "displaybyname",
         "body": [
             "DISPLAY BY NAME ${1:valor}"
         ],
         "description": "Display by name"
     },
-    "message": {
+    "message-es": {
         "prefix": "message",
         "body": [
             "MESSAGE \"${1:mensaje}\""
         ],
         "description": "Mostrar un mensaje"
     },
-    "prepared": {
+    "prepared-es": {
         "prefix": "prepared",
         "body": [
             "PREPARE ${1:prep} FROM ${2:sql_var}",
@@ -225,7 +225,7 @@
         ],
         "description": "Define un prepared statment y lo descarga al record elegido, previamente debe tener definida una variable para soportar el SQL "
     },
-    "preparedForeach": {
+    "preparedForeach-es": {
         "prefix": "preparedForeach",
         "body": [
             "PREPARE ${1:prep} FROM ${2:sql_var}",
@@ -233,7 +233,7 @@
             "OPEN    ${3:curs}",
             "\tINITIALIZE ${4:record}.* TO NULL",
             "\tFOREACH ${3:curs} INTO ${4:record}",
-            "\t\t${5:}",
+            "\t\t$5",
             "\tEND FOREACH",
             "CLOSE ${3:curs}",
             "FREE  ${3:curs}",

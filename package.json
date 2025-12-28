@@ -68,7 +68,11 @@
         "snippets": [
             {
                 "language": "4gl",
-                "path": "./snippets/snippets.json"
+                "path": "./snippets/snippets.en.json"
+            },
+            {
+                "language": "4gl",
+                "path": "./snippets/snippets.es.json"
             }
         ],
         "configurationDefaults": {
